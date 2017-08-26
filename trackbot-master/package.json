@@ -1,0 +1,22 @@
+{
+  "name": "trackbot",
+  "version": "1.0.0",
+  "description": "Facebook messenger bot for traking shipments",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Nisar Khan (nisarkhan@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "body-parser": "^1.15.1",
+    "country-data": "0.0.29",
+    "express": "^4.13.4",
+    "node-easypost": "^2.1.1",
+    "request": "^2.72.0"
+  }
+}

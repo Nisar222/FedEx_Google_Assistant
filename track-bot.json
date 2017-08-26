@@ -1,0 +1,14 @@
+{
+	"PORT": 3000,
+	"MESSENGER":{
+		"PAGE_ACCESS_TOKEN":"EAAYq4RTioFABAHhdh63z6bQaF5PJ84uNcYE77vrTvQjatZBTQ9YnkBv2lsKpUntonsDa0qF8q5LopfQ0flOLPUVnj29X6EiUbLm1BelShrDZBuTI0UZAjlIn2xGC5ovCcjcndkjQXUerXYTZCjnV0pPjKxZBeKhQZC3o0ts8ZBuFAZDZD",
+		"VALIDATION_TOKEN":"track_bot",
+		"APP_SECRET":"dfeb8ce931d7d1fa39084871e7c60628"
+	},
+	"API":{
+		"URL":"https://api.goshippo.com/v1/tracks/"
+	},
+	"EASYPOST":{
+		"APIKEY":"7bOChLCNgLFNYST5kkx5qA"
+	}
+}
