@@ -23,6 +23,12 @@ const trackingController = require('./lib/controllers/tracking-controller')
 const restService = express();
 restService.use(bodyParser.json());
 
+//Say hi on a get request.. to see if service is answering
+
+restService.get('/', function (req, res) {
+    res.send('Hi, I am a FedEx Google assistant app' )
+  })
+
 restService.post('/', function (req, res) {
 
     console.log('hook request');
