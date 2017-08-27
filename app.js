@@ -54,33 +54,33 @@ restService.post('/', function (req, res) {
                 if (requestBody.result.action == 'track.package' && requestBody.result.parameters.TrackingNumber !='' ) {
                    // If we have a tracking number, do this..
                    //First check if the number is 12 digits, otherwise throw error
+                    //remove non numeric charachters from Tracking Number before passing it ti easypost
+                    var AWB = (requestBody.result.parameters.TrackingNumber).replace(/\D/g,'');
+                    // TEST NUMBERIZE - WORKED FINE 
+                    console.log('Numberize Tracking no:' + AWB);
 
-                        if (requestBody.result.parameters.TrackingNumber.length != 12 && !/^\d+$/.test(requestBody.result.parameters.TrackingNumber)) {
-                            
-                            //reply with an error
-                            speech = 'Sorry, Your tracking number is incorrect, please try again'
-                            return res.json({
-                                speech: speech,
-                                displayText: speech,
-                                source: 'apiai-webhook-sample'
-                            });
-
-                        } else {
-                            trackPackage(requestBody.result.parameters.TrackingNumber, function(speech){
-                                console.log('status = ' + speech);
-                                //res.send()
+                            if (AWB.length != 12 || !/^\d+$/.test(AWB)) {
+                                
+                                //reply with an error
+                                speech = 'Sorry, Your tracking number is incorrect, please try again'
                                 return res.json({
                                     speech: speech,
                                     displayText: speech,
                                     source: 'apiai-webhook-sample'
                                 });
-        
-                           });
-                        }
 
-                    
-
-                  
+                            } else {
+                                trackPackage(AWB, function(speech){
+                                    console.log('status = ' + speech);
+                                    //res.send()
+                                    return res.json({
+                                        speech: speech,
+                                        displayText: speech,
+                                        source: 'trackbot-google-assistant webhook'
+                                    });
+            
+                            });
+                            }
                 }
                 
             }
